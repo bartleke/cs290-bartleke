@@ -15,6 +15,12 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
+app.get('/show-data',function(req,res){
+  var context = {};
+  context.sentData = req.query.myData;
+  res.render('show-data', context);
+});
+
 app.get('/get-req',function(req,res){
   var qParams = [];
   for (var p in req.query){
@@ -25,7 +31,7 @@ app.get('/get-req',function(req,res){
   res.render('get-req', context);
 });
 
-app.post('/post-req', function(req,res){
+app.post('/post-form', function(req,res){
   var qParams = [];
   for (var p in req.body){
     qParams.push({'name':p,'value':req.body[p]})
@@ -34,7 +40,7 @@ app.post('/post-req', function(req,res){
   console.log(req.body);
   var context = {};
   context.dataList = qParams;
-  res.render('post-req', context);
+  res.render('post-form', context);
 });
 
 app.use(function(req,res){
