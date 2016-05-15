@@ -11,6 +11,10 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
+app.get('/',function(req,res){
+  res.render('home');
+});
+
 function sharedHandler(req, res)
 {
   var qParams = [];
@@ -19,11 +23,11 @@ function sharedHandler(req, res)
   }
   var context = {};
   context.dataList = qParams;
-  res.render('/', context);
+  res.render('/home', context);
 }
 
-app.get('/', sharedHandler);
-app.post('/', sharedHandler);
+app.get('/home', sharedHandler);
+app.post('/home', sharedHandler);
 
 
 app.use(function(req,res){
