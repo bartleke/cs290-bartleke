@@ -15,7 +15,7 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-function sharedHandler(req, res)
+function sharedFunction(req, res)
 {
   var qParams = [];
   for (var p in req.query){
@@ -23,11 +23,11 @@ function sharedHandler(req, res)
   }
   var context = {};
   context.dataList = qParams;
-  res.render('/get-req', context);
+  res.render('/home', context);
 }
 
-app.get('/get-req', sharedHandler);
-app.post('/get-req', sharedHandler);
+app.get('/home', sharedFunction);
+app.post('/home', sharedFunction);
 
 
 app.use(function(req,res){
