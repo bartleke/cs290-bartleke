@@ -15,23 +15,17 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-app.get('/show-data',function(req,res){
-  var context = {};
-  context.sentData = req.query.myData;
-  res.render('show-data', context);
-});
-
-app.get('/getreq',function(req,res){
+app.get('/get-req',function(req,res){
   var qParams = [];
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
   context.dataList = qParams;
-  res.render('get-loopback-improved', context);
+  res.render('get-req', context);
 });
 
-app.post('/post-loopback', function(req,res){
+app.post('/post-req', function(req,res){
   var qParams = [];
   for (var p in req.body){
     qParams.push({'name':p,'value':req.body[p]})
@@ -40,7 +34,7 @@ app.post('/post-loopback', function(req,res){
   console.log(req.body);
   var context = {};
   context.dataList = qParams;
-  res.render('post-loopback', context);
+  res.render('post-req', context);
 });
 
 app.use(function(req,res){
