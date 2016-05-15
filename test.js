@@ -23,11 +23,11 @@ function sharedHandler(req, res)
   }
   var context = {};
   context.dataList = qParams;
-  res.render('/home', context);
+  res.render('/get-req', context);
 }
 
-app.get('/home', sharedHandler);
-app.post('/home', sharedHandler);
+app.get('/get-req', sharedHandler);
+app.post('/get-req', sharedHandler);
 
 
 app.use(function(req,res){
