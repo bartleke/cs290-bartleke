@@ -15,33 +15,20 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
-app.get('/show-data',function(req,res){
-  var context = {};
-  context.sentData = req.query.myData;
-  res.render('show-data', context);
-});
-
-app.get('/get-req',function(req,res){
+function sharedFunction(req, res)
+{
   var qParams = [];
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
   context.dataList = qParams;
-  res.render('get-req', context);
-});
+  res.render('/get-req', context);
+}
 
-app.post('/post-form', function(req,res){
-  var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
-  }
-  console.log(qParams);
-  console.log(req.body);
-  var context = {};
-  context.dataList = qParams;
-  res.render('post-form', context);
-});
+app.get('/get-req', sharedFunction);
+app.post('/get-req', sharedFunction);
+
 
 app.use(function(req,res){
   res.status(404);
