@@ -25,7 +25,7 @@ app.get('/get-req',function(req,res){
   res.render('get-req', context);
 });
 
-app.post('/post-loopback', function(req,res){
+app.post('/post-req', function(req,res){
   var qParams = [];
   for (var p in req.body){
     qParams.push({'name':p,'value':req.body[p]})
@@ -34,7 +34,7 @@ app.post('/post-loopback', function(req,res){
   console.log(req.body);
   var context = {};
   context.dataList = qParams;
-  res.render('post-loopback', context);
+  res.render('post-req', context);
 });
 
 app.use(function(req,res){
