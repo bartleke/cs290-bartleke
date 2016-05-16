@@ -1,5 +1,5 @@
 {
-  "name": "GET and POST checker",
+  "name": "form-checker",
   "version": "1.0.0",
   "description": "GET and POST checker",
   "main": "app.js",

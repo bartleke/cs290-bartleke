@@ -26,6 +26,7 @@ app.get('/get-info',function(req,res){
 });
 
 app.post('/get-info', function(req,res){
+  document.getElementById("h1ID").innerHTML = "POST Request Received";
   var qParams = [];
   for (var p in req.body){
     qParams.push({'name':p,'value':req.body[p]})
