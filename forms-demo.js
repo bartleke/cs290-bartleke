@@ -17,6 +17,7 @@ app.get('/',function(req,res){
 
 /*****************************************/
 app.get('/get-info',function(req,res){
+  //title will log to console, but will not change on page?
   var title = "GET Request Received";
   console.log(title);
   var par = [];
@@ -29,6 +30,7 @@ app.get('/get-info',function(req,res){
 });
 
 app.post('/get-info', function(req,res){
+  //title will log to console, but will not change on page?
   var title = "POST Request Received";
   console.log(title);
   var par = [];
