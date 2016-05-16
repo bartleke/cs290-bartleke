@@ -17,7 +17,8 @@ app.get('/',function(req,res){
 
 /*****************************************/
 app.get('/get-info',function(req,res){
-  'title': "GET Request Received";
+  var title = "GET Request Received";
+  console.log(title);
   var par = [];
   for (var p in req.query){
     par.push({'name':p,'value':req.query[p]})
@@ -28,7 +29,8 @@ app.get('/get-info',function(req,res){
 });
 
 app.post('/get-info', function(req,res){
-  title: "POST Request Received";
+  var title = "POST Request Received";
+  console.log(title);
   var par = [];
   for (var p in req.body){
     par.push({'name':p,'value':req.body[p]})
