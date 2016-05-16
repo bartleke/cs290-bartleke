@@ -1,7 +1,7 @@
 {
-  "name": "hello-world",
+  "name": "GET and POST checker",
   "version": "1.0.0",
-  "description": "Hello world with express and node.js",
+  "description": "GET and POST checker",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
