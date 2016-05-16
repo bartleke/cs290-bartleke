@@ -15,29 +15,29 @@ app.get('/',function(req,res){
   res.render('home');
 });
 
+/*****************************************/
 app.get('/get-info',function(req,res){
-  title: "GET Request Received";
-  var qParams = [];
+  'title': "GET Request Received";
+  var par = [];
   for (var p in req.query){
-    qParams.push({'name':p,'value':req.query[p]})
+    par.push({'name':p,'value':req.query[p]})
   }
   var context = {};
-  context.dataList = qParams;
+  context.dataList = par;
   res.render('get-info', context);
 });
 
 app.post('/get-info', function(req,res){
   title: "POST Request Received";
-  var qParams = [];
+  var par = [];
   for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
+    par.push({'name':p,'value':req.body[p]})
   }
- //console.log(qParams);
-  //console.log(req.body);
   var context = {};
-  context.dataList = qParams;
+  context.dataList = par;
   res.render('get-info', context);
 });
+/*******************************************/
 
 app.use(function(req,res){
   res.status(404);
